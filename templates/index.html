@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300|Rubik+Mono+One|Source+Sans+Pro:400i,900i&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="static/styles/main.css">
     <title>Creative Engine</title>
   </head>
   <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="/">Creative Engine</a>
         </div>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="/">Home</a></li>
-        </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/">Team</a></li>
-          <li><a href="/">About</a></li>
           <li><a href="instructions">Instructions</a></li>
         </ul>
       </div>
@@ -36,10 +33,17 @@
             <label for="caption">Insert end of each caption here:</label>
             <input type="text" name="end" id="end" class="form-control" rows="8" cols="80"></textarea>
           </div>
-          <button type="submit" class="btn btn-default">Generate</button>
+          <button type="submit">GENERATE</button>
         </form>
+        <p class="title">
+        {{label}}
+      </p>
+      {% if caption %}
+      <p>
+        {{caption}}
+      </p>
+      {% endif %}
       </div>
-      {{caption}}
       <div class="col-sm-4"></div>
     </div>
 

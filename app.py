@@ -15,16 +15,16 @@ def submit():
         start = request.form['start']
         end = request.form['end']
     else:
-        return render_template('index.html', caption = "Invalid input")
+        return render_template('index.html', caption = "Invalid input", label = "Error")
     scraper = Scraper(username, start, end)
     text = scraper.text
     try:
         markov = Markov(text)
     except:
-        return render_template('index.html', caption = "Invalid input")
+        return render_template('index.html', caption= "Invalid input", label = "Error")
     text = markov.generate()
     if text == None:
         text = "Needs more input"
-    return render_template('index.html', caption = text)
+    return render_template('index.html', label = "Generated Caption:", caption = text)
 if __name__ == '__main__':
   app.run(host='127.0.0.1', port=8000, debug=True)
