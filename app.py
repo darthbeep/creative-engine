@@ -4,8 +4,10 @@ from markov import Markov
 from scraper import Scraper
 @app.route('/')
 def index():
-    return render_template('index2.html', caption = "")
-
+    return render_template('index.html', caption = "")
+@app.route('/instructions')
+def instructions():
+    return render_template('instructions.html', caption = "")
 @app.route('/caption', methods=['POST'])
 def submit():
     if request.method == 'POST':
@@ -13,16 +15,16 @@ def submit():
         start = request.form['start']
         end = request.form['end']
     else:
-        return render_template('index2.html', caption = "Invalid input")
+        return render_template('index.html', caption = "Invalid input")
     scraper = Scraper(username, start, end)
     text = scraper.text
     try:
         markov = Markov(text)
     except:
-        return render_template('index2.html', caption = "Invalid input")
+        return render_template('index.html', caption = "Invalid input")
     text = markov.generate()
     if text == None:
         text = "Needs more input"
-    return render_template('index2.html', caption = text)
+    return render_template('index.html', caption = text)
 if __name__ == '__main__':
   app.run(host='127.0.0.1', port=8000, debug=True)

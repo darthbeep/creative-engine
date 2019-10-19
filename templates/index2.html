@@ -19,6 +19,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Team</a></li>
           <li><a href="#">About</a></li>
+          <li><a href="instructions">Instructions</a></li>
         </ul>
       </div>
     </nav>
@@ -28,12 +29,8 @@
       <div class="col-sm-4">
         <form class=""  action="/caption" method="POST">
           <div class="form-group">
-            <label for="caption">Insert instagram username here:</label>
-            <input type="text" name="caption" id="caption" class="form-control" rows="8" cols="80"></textarea>
-            <label for="start">Insert start of each caption here:</label>
-            <input type="text" name="start" id="start" class="form-control" rows="8" cols="80"></textarea>
-            <label for="caption">Insert end of each caption here:</label>
-            <input type="text" name="end" id="end" class="form-control" rows="8" cols="80"></textarea>
+            <label for="caption">Insert Caption Here:</label>
+            <textarea name="caption" id="caption" class="form-control" rows="8" cols="80"></textarea>
           </div>
           <button type="submit" class="btn btn-default">Generate</button>
         </form>

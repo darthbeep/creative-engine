@@ -19,7 +19,6 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Team</a></li>
           <li><a href="#">About</a></li>
-          <li><a href="instructions">Instructions</a></li>
         </ul>
       </div>
     </nav>
@@ -27,21 +26,14 @@
     <div class="row">
       <div class="col-sm-4"></div>
       <div class="col-sm-4">
-        <form class=""  action="/caption" method="POST">
-          <div class="form-group">
-            <label for="caption">Insert instagram username here:</label>
-            <input type="text" name="caption" id="caption" class="form-control" rows="8" cols="80"></textarea>
-            <label for="start">Insert start of each caption here:</label>
-            <input type="text" name="start" id="start" class="form-control" rows="8" cols="80"></textarea>
-            <label for="caption">Insert end of each caption here:</label>
-            <input type="text" name="end" id="end" class="form-control" rows="8" cols="80"></textarea>
-          </div>
-          <button type="submit" class="btn btn-default">Generate</button>
-        </form>
+        <h1> Instructions </h1>
+        <p> To use this app input the username of the account you want to use in the username field. If you want to use a partial caption for image descriptions, put the word or characters that come before your description in the start box, and the word or characters that come after in the end box.
+          <br><br> For example, the account <a href="https://www.instagram.com/creative_engine_project/"> creative_engine_project </a> always has the characters "/30" in the beginning of an image description, so this would go in the start box, and it always ends an image description with "About this project", so that can go in the end text box.
+
+          <br><br>
+          To generate based on whole instagram captions, leave these boxes blank.
+        </p>
       </div>
-      {{caption}}
-      <div class="col-sm-4"></div>
-    </div>
 
   </body>
 </html>
