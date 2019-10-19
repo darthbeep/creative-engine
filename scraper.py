@@ -3,6 +3,10 @@ import requests
 class Scraper:
     def __init__(self, username, start = 'text":', stop = '"}'):
         print("test")
+        if len(start) < 1:
+            start = 'text":"'
+        if len(stop) < 1:
+            stop = '"}'
         url = 'https://www.instagram.com/' + username
         page = requests.get(url)
         things = str(page.text).split(start)
