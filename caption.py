@@ -11,6 +11,6 @@ def caption(username, start, end):
             return "Username not found"
         return "Not enough captions found to generate new text"
     text = markov.generate()
-    if len(text) < 1:
+    if text == None or len(text) < 1:
         text = "Not enough captions found to generate new text"
     return text
