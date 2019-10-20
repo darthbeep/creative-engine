@@ -4,7 +4,7 @@ import json
 
 class Markov:
     def __init__(self, text):
-        self.text = open('testcaptions.txt', 'r').read()
+        self.text = text
         self.text_model = markovify.Text(text)
 
     def generate(self):
