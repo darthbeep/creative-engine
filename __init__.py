@@ -2,9 +2,18 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 from markov import Markov
 from scraper import Scraper
-@app.route('/')
+from caption import caption
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html', caption = "")
+    if request.method == 'GET':
+        return render_template('index.html', caption = "")
+    username = request.form['caption']
+    start = request.form['start']
+    end = request.form['end']
+    text = caption(username, start, end)
+    if text:
+        return render_template('index.html', label = "Generated Caption:", caption = text)
+    return render_template('index.html', caption= "Invalid input", label = "Error")
 @app.route('/instructions')
 def instructions():
     return render_template('instructions.html', caption = "")
