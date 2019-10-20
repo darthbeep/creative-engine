@@ -12,13 +12,7 @@ def index():
     text = caption(username, start, end)
     if text:
         return render_template('index.html', label = "Generated Caption:", caption = text)
-<<<<<<< HEAD
-    return render_template('index.html', caption= "Invalid input", label = "Error")
-
-
-=======
     return render_template('index.html', caption= "Invalid input, please check if username is correct", label = "Error")
->>>>>>> 8e284eeb3b88cd7a6788cb54afd357dafce2be9b
 @app.route('/instructions')
 def instructions():
     return render_template('instructions.html', caption = "")
