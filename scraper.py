@@ -18,13 +18,18 @@ class Scraper:
         text = ""
         for p in posts:
             post = p.caption
+            if post == None:
+                continue
             if(start not in post or stop not in post):
                 continue
             if(len(start) > 1):
              post = post.split(start)[1]
             if(len(stop) > 1):
              post = post.split(stop)[0]
-            post = post[:-2]
-            post += '.'
+            while(post[-1] == '\n'):
+                post = post[:-1]
+            if(post[-1] != '.' or post[-1] != '!'):
+                post += '.'
+            post += '\n'
             text +=  post
         self.text = text

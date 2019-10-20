@@ -3,11 +3,6 @@ body {
  background-color: #FFFFFF;
  color: #FFFFFF;
 }
-h1 {
- color: #FFFF33;
- text-align: center;
- font: italic 200% fantasy;
-}
 p {
  text-align: right;
 }
@@ -28,7 +23,7 @@ label {
 }
 
 button {
-  background-color: #D72638;
+  background-color: #59D193;
   font-size: 300%;
   font-family: 'Source Sans Pro', sans-serif;
   color: #FFFFFF;
@@ -38,6 +33,9 @@ button {
   padding-right: 25px;
   padding-top: 15px;
   padding-bottom: 15px;
+}
+button:hover{
+  background-color: #59AC93;
 }
 
 input[type=text] {
@@ -84,7 +82,7 @@ nav.navbar{
 
 li{
   color: #FFFFFF;
-  background-color: #98D193;
+  background-color: #638C89;
   padding: 20px;
   margin: 10px;
   height: 100%;
@@ -94,7 +92,7 @@ li{
 }
 li:hover{
   color: #FFFFFF;
-  background-color: #98D193;
+  background-color: #517371;
   padding: 20px;
   margin: 10px;
   height: 100%;
@@ -142,7 +140,7 @@ p{
   align: center;
   padding-left: 5%;
   padding-right: 5%;
-  border: 2px solid black;
+  border: 1px solid black;
   border-bottom-left-radius:15px;
   border-bottom-right-radius:15px;
 }
