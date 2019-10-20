@@ -1,21 +1,26 @@
 import requests
+import instaloader
 
 class Scraper:
-    def __init__(self, username, start = 'text":', stop = '"}'):
-        print("test")
+    def __init__(self, username, start = '', stop = ''):
         if len(start) < 1:
-            start = 'text":"'
+            start = ''
         if len(stop) < 1:
-            stop = '"}'
-        url = 'https://www.instagram.com/' + username
-        page = requests.get(url)
-        things = str(page.text).split(start)
-        things = things[1:]
-        for i in range(len(things)):
-             things[i] = things[i].split(stop)[0]
-             if '.' not in things[i]:
-                 things[i] += '. '
-        text = "".join(things)
-        text = text.split("\\n")
-        text = "".join(text)
+            stop = ''
+        self.username = username
+        L = instaloader.Instaloader()
+        profile = instaloader.Profile.from_username(L.context, username)
+        posts = profile.get_posts()
+        text = ""
+        for p in posts:
+            post = p.caption
+            if(start not in post or stop not in post):
+                continue
+            if(len(start) > 1):
+             post = post.split(start)[1]
+            if(len(stop) > 1):
+             post = post.split(stop)[0]
+            post = post[:-2]
+            post += '.'
+            text +=  post
         self.text = text
