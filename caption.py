@@ -7,8 +7,10 @@ def caption(username, start, end):
     try:
         markov = Markov(text)
     except:
-        return None
+        if len(text) < 1:
+            return "Username not found"
+        return "Not enough captions found to generate new text"
     text = markov.generate()
-    if text == None:
-        text = "Needs more input"
+    if len(text) < 1:
+        text = "Not enough captions found to generate new text"
     return text

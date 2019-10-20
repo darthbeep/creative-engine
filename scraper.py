@@ -9,8 +9,12 @@ class Scraper:
             stop = ''
         self.username = username
         L = instaloader.Instaloader()
-        profile = instaloader.Profile.from_username(L.context, username)
-        posts = profile.get_posts()
+
+        try:
+            profile = instaloader.Profile.from_username(L.context, username)
+            posts = profile.get_posts()
+        except:
+            posts = []
         text = ""
         for p in posts:
             post = p.caption
